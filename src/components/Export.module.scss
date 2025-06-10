@@ -1,0 +1,16 @@
+@use "../styles/variables" as *;
+
+.export {
+  padding: 9px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid $dark-blue-40;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dark_blue_50 {
+  color: $dark-blue-50;
+}

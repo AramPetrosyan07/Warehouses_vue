@@ -1,0 +1,23 @@
+@use "../styles/variables" as *;
+
+.sidebar-logo {
+  width: 114px;
+  height: 85px;
+  // display: flex;
+  // align-items: center;
+  // gap: 0.75rem;
+  // background-color: $red-50;
+  &.collapsed {
+    width: 62px;
+    height: 47px;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .sidebar-logo {
+    .logo-text {
+      font-size: 1.25rem;
+    }
+  }
+}

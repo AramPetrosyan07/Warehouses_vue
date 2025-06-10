@@ -1,0 +1,112 @@
+// Define variables for colors and sizes
+// @use "../../../styles/variables";
+@use "../styles/variables" as *;
+
+$sidebar-text: #fff;
+$active-bg: #ff6200;
+$sidebar-width: 252px;
+$collapsed-width: 62px;
+$sidebar-padding: 30px;
+$spacing-unit: 10px;
+
+// Mixin for flex centering
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+// Sidebar container
+.sidebar {
+  width: $sidebar-width;
+  background-color: $gray-100;
+  color: $sidebar-text;
+  padding: $sidebar-padding;
+  transition: width 0.3s ease;
+
+  .sidebar-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // align-items: center;
+
+    .sidebar-toggle {
+      all: unset;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: auto;
+      position: relative;
+      right: -30px;
+
+      &:focus,
+      &:active,
+      &:hover {
+        outline: none;
+        box-shadow: none;
+        border: none;
+        border-color: transparent;
+      }
+    }
+  }
+
+  // Logo section
+  .sidebar-logo {
+    margin-bottom: $spacing-unit * 5;
+
+    img {
+      width: 50px;
+    }
+  }
+
+  // Navigation list
+  .sidebar-nav {
+    // Navigation item
+    .sidebar-nav-item {
+      @include flex-center;
+      // padding: $spacing-unit;
+      border-radius: 5px;
+      text-decoration: none;
+      color: $sidebar-text;
+      transition: background-color 0.3s ease;
+
+      // &.active {
+      //   background-color: $active-bg;
+      // }
+
+      // .icon {
+      //   margin-right: $spacing-unit;
+      // }
+
+      .label {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &.collapsed {
+    width: $collapsed-width; // or another compact size
+
+    .sidebar-logo {
+      justify-content: center;
+
+      .logo-text {
+        display: none;
+      }
+    }
+
+    .sidebar-nav {
+      .sidebar-nav-item {
+        justify-content: center;
+
+        .label {
+          display: none;
+        }
+
+        .icon {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

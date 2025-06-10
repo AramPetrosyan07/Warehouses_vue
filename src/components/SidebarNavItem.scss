@@ -1,0 +1,50 @@
+@use "../styles/variables" as *;
+
+.sidebar-nav-item {
+  // width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: $dark-blue-10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  // font-size: 0.9rem;
+  border-radius: 8px;
+  gap: 16px;
+
+  // &:hover {
+  //   background-color: #e9ecef;
+  //   color: #495057;
+  // }
+
+  &.active {
+    background-color: $white;
+  }
+
+  .nav-icon {
+    // font-size: 1.1rem;
+    // min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // &.nav-icon-collapsed {
+    // margin-right: 0.75rem;
+
+    // }
+  }
+
+  // .nav-label {
+  //   color: $dark-blue-10;
+
+  //   &.activeLabel {
+  //     color: #eb672f; // active color
+  //   }
+  // }
+  // .activeLabel {
+  //   color: #eb672f; // active color
+  // }
+}
